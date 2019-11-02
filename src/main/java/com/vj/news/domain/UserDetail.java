@@ -4,16 +4,21 @@ import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Embeddable
 @Table(name = "t_user_details")
-public class UserDetails {
+public class UserDetail {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	private String firstName;
 	private String lastName;
@@ -21,7 +26,6 @@ public class UserDetails {
 	private UserType userType;
 	private String email;
 	private String userName;
-	@JsonIgnore
 	private String password;
 	
 	public int getUserId() {

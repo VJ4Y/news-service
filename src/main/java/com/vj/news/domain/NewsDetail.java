@@ -36,7 +36,7 @@ public class NewsDetail {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "created_by")
-	private UserDetails createdBy;
+	private UserDetail createdBy;
 
 	@Column(name = "ts_created")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
@@ -44,7 +44,7 @@ public class NewsDetail {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "published_by")
-	private UserDetails publishedBy;
+	private UserDetail publishedBy;
 	
 	@Column(name = "ts_published")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
@@ -69,13 +69,13 @@ public class NewsDetail {
 	public NewsStatus getStatus() {
 		return status;
 	}
-	public UserDetails getCreatedBy() {
+	public UserDetail getCreatedBy() {
 		return createdBy;
 	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
-	public UserDetails getPublishedBy() {
+	public UserDetail getPublishedBy() {
 		return publishedBy;
 	}
 	public Date getPublishedAt() {

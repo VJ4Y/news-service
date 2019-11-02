@@ -2,6 +2,8 @@ package com.vj.news.domain;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 @Embeddable
 public class NewsCategory {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String categoryCode;
 	private String CategoryName;
 
